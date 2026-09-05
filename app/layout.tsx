@@ -3,11 +3,11 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://stefana912.github.io'),
-  title: 'Stefana Muller — Technology & Infrastructure Leader',
-  description: 'Writing and work from Stefana Muller, a technology executive focused on cloud infrastructure, operations, product, and people.',
+  title: 'Stefana Muller — Global Infrastructure & Operations Executive',
+  description: 'Stefana Muller is a global technology executive pioneering AI-native operations across cloud infrastructure, SRE, platform engineering, and enterprise SaaS.',
   openGraph: {
-    title: 'Stefana Muller — Technology & Infrastructure Leader',
-    description: 'Infrastructure · Product · People',
+    title: 'Stefana Muller — Global Infrastructure & Operations Executive',
+    description: 'AI-native operations · Cloud infrastructure · SRE',
     url: 'https://stefana912.github.io',
     siteName: 'Stefana Muller',
     images: [{ url: '/og.png', width: 1731, height: 909, alt: 'Stefana Muller — Infrastructure, Product, People' }],
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stefana Muller — Technology & Infrastructure Leader',
-    description: 'Infrastructure · Product · People',
+    title: 'Stefana Muller — Global Infrastructure & Operations Executive',
+    description: 'AI-native operations · Cloud infrastructure · SRE',
     images: ['/og.png'],
   },
 };
