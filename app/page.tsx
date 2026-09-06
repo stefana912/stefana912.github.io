@@ -10,8 +10,8 @@ const writingUrl = 'https://www.linkedin.com/in/stefanamuller/recent-activity/ar
 
 const career = [
   { period: '2025 - Now', company: 'Salesforce', role: 'VP, Infrastructure & Operations · Trusted Services', detail: 'Leading infrastructure strategy and operational excellence for products serving 12,000+ customers in a business that grew 2x year over year following acquisition. Own an approximately $100M cost-to-serve and vendor budget, post-acquisition integration, security and compliance, and the shift to agentic development and operations.' },
-  { period: '2023 - 2025', company: 'Own', role: 'SVP, Infrastructure & Operations', detail: 'Led global Cloud Infrastructure, SRE, and Production Engineering for 10,000+ customers in 15 regions. Scaled from 18,000 to 52,000+ Kubernetes clusters without adding headcount.' },
-  { period: '2020 - 2023', company: 'Oscar Health', role: 'Senior Director, CTO Product & Process Office', detail: 'Built CTO Operations, FinOps, and PMO functions; aligned 40 teams and 400 engineers through IPO readiness; and reduced mean time to recovery by 50%.' },
+  { period: '2023 - 2025', company: 'Own', role: 'SVP, Infrastructure & Operations', detail: 'Led global Cloud Infrastructure, SRE, and Production Engineering for 10,000+ customers in 15 regions. Supported acquisition due diligence across architecture, engineering, and security, and scaled from 18,000 to 52,000+ Kubernetes clusters without adding headcount.' },
+  { period: '2020 - 2023', company: 'Oscar Health', role: 'Senior Director, CTO Product & Process Office', detail: 'Built CTO Operations, FinOps, and PMO functions; advanced SOX compliance and IPO readiness across 40 teams and 400 engineers; and reduced mean time to recovery by 50%.' },
   { period: '2018 - 2020', company: '2nd Watch', role: 'Senior Product Manager, DevOps & Cloud Migration', detail: 'Launched the first DevOps professional and managed-service offering across AWS, Azure, and GCP, building the practice and hiring 30+ consultants.' },
   { period: '2016 - 2018', company: 'Opsani', role: 'VP, Business Development & Developer Evangelist', detail: 'Drove product-market fit for an ML-powered autonomous operations platform and built partnerships across Docker, Red Hat, CNCF, AWS, and Azure.' },
   { period: '2000 - 2016', company: 'CA Technologies', role: 'Senior Director, Product Management · DevOps', detail: 'Led global product management for enterprise cloud and DevOps solutions, managed a $100M P&L, and grew AppLogic revenue 128% year over year.' },
@@ -46,7 +46,7 @@ export default function Home() {
           <article><span>01</span><h3>Scale and operate</h3><p>Cloud infrastructure, SRE, platform engineering, reliability, security, compliance, FinOps, and 24x7 global operations.</p></article>
           <article><span>02</span><h3>Run the business</h3><p>P&amp;L and budget ownership, annual goals and measures, quarterly business reviews, long-range planning, business health, strategic sourcing, and executive alignment.</p></article>
           <article><span>03</span><h3>Build and commercialize</h3><p>Product strategy, go-to-market, offer development, revenue growth, customer engagement, and strategic partnerships.</p></article>
-          <article><span>04</span><h3>Lead transformation</h3><p>AI strategy, organizational design, M&amp;A integration, change management, manager development, and cross-functional execution.</p></article>
+          <article><span>04</span><h3>Lead transformation</h3><p>AI strategy, organizational design, IPO readiness, M&amp;A due diligence and integration, change management, manager development, and cross-functional execution.</p></article>
         </div>
       </section>
 
