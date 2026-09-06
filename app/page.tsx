@@ -8,11 +8,20 @@ const essays = [
 
 const writingUrl = 'https://www.linkedin.com/in/stefanamuller/recent-activity/articles/';
 
+const talks = [
+  { year: '2026', event: 'AI SRE Summit', format: 'Panel', title: 'AI in SRE: Hype vs. Reality in 2026', overview: 'A grounded conversation about where AI is creating measurable value in production operations, where it still falls short, and why trust, context, and human judgment remain essential in high-stakes systems.', url: 'https://www.youtube.com/watch?v=xZkwvK-vL40' },
+  { year: '2026', event: 'Kubernetes for Humans', format: 'Podcast', title: 'From Pagers to Pair Programming: Navigating Massive Scale and AI', overview: 'A conversation about scaling global, multi-cloud Kubernetes operations through rapid customer growth and acquisition, then applying AI to pair programming, documentation, troubleshooting, and production operations without giving up human accountability.', url: 'https://youtu.be/swRp9d75IUc' },
+  { year: '2025', event: 'KubeCon + CloudNativeCon North America', format: 'Panel', title: 'Security Theater or Real Defense? Navigating Open Source Security in a Cloud Native World', overview: 'A candid discussion of what effective cloud-native security looks like beyond checklists, from runtime detection and evolving threats to balancing open source velocity, compliance, and practical risk reduction.', url: 'https://www.youtube.com/watch?v=jETmMin6-_M' },
+  { year: '2025', event: 'Kubernetes Community Day New York', format: 'Panel', title: 'Is AI in the Future of Infrastructure as Code?', overview: 'A discussion of how AI-driven automation and platform engineering are reshaping infrastructure as code, including the evolution of today\'s tools, the promise of generative IaC, and the implications for scalability, security, and developer velocity.', url: 'https://www.youtube.com/watch?v=7xtu-3_1i6k' },
+  { year: '2023', event: 'The CareerOps Podcast', format: 'Podcast', title: 'Technology Leadership, Startups, Operations, and Lessons Learned', overview: 'A wide-ranging conversation about career transitions, executive leadership, and building DevOps and SRE organizations, with lessons drawn from the early cloud era, startups, IPOs, acquisitions, multi-cloud operations, and the people side of technology.', url: 'https://www.youtube.com/watch?v=ckd7PWBDugk' },
+  { year: '2019', event: 'AWS re:Invent', format: 'Conference talk', title: 'Simple Path to AWS Managed Services', overview: 'A practical guide to accelerating enterprise cloud adoption with AWS Managed Services, from assessing existing infrastructure and planning migration through automation, operational readiness, and the transition to a durable cloud operating model.', url: 'https://www.youtube.com/watch?v=T64UQqD_BeE' },
+];
+
 const career = [
   { period: '2025 - Now', company: 'Salesforce', role: 'VP, Infrastructure & Operations · Salesforce Guardian', detail: 'Leading infrastructure strategy and operational excellence for products serving 12,000+ customers in a business that grew 2x year over year following acquisition. Own a 9-figure operating portfolio spanning infrastructure, cloud services, and strategic vendors. Responsible for post-acquisition integration, security and compliance, and the shift to agentic development and operations.' },
   { period: '2023 - 2025', company: 'Own', role: 'SVP, Infrastructure & Operations', detail: 'Led global Cloud Infrastructure, SRE, and Production Engineering for 10,000+ customers in 15 regions. Supported acquisition due diligence across architecture, engineering, and security, and scaled from 18,000 to 52,000+ Kubernetes clusters without adding headcount.' },
   { period: '2020 - 2023', company: 'Oscar Health', role: 'Senior Director, CTO Product & Process Office', detail: 'Built CTO Operations, FinOps, and PMO functions; advanced SOX compliance and IPO readiness across 40 teams and 400 engineers; and reduced mean time to recovery by 50%.' },
-  { period: '2018 - 2020', company: '2nd Watch', role: 'Senior Product Manager, DevOps & Cloud Migration', detail: 'Launched the first DevOps professional and managed-service offering across AWS, Azure, and GCP, building the practice and hiring 30+ consultants.' },
+  { period: '2018 - 2020', company: '2nd Watch', role: 'Senior Product Manager, DevOps & Cloud Migration', detail: 'Launched the first DevOps professional and managed-service offering across AWS, Azure, and GCP, building the practice and hiring 30+ consultants. Developed a strategic alliance with GitLab that expanded a reseller relationship into a joint managed DevOps offering and coordinated go-to-market motion.', sourceUrl: 'https://www.crn.com/news/cloud/gitlab-introduces-first-channel-program-to-drive-devops-alliances', sourceLabel: 'Read the CRN coverage' },
   { period: '2016 - 2018', company: 'Opsani', role: 'VP, Business Development & Developer Evangelist', detail: 'Drove product-market fit for an ML-powered autonomous operations platform and built partnerships across Docker, Red Hat, CNCF, AWS, and Azure.' },
   { period: '2000 - 2016', company: 'CA Technologies', role: 'Senior Director, Product Management · DevOps', detail: 'Led global product management for enterprise cloud and DevOps solutions, managed a $100M P&L, and grew AppLogic revenue 128% year over year.' },
 ];
@@ -22,7 +31,7 @@ export default function Home() {
     <main>
       <nav className="site-nav" aria-label="Main navigation">
         <a className="wordmark" href="#top" aria-label="Stefana Muller, home"><span>SM</span> Stefana Muller</a>
-        <div className="nav-links"><a href="#expertise">Expertise</a><a href="#writing">Writing</a><a href="#resume">Résumé</a><a href="#about">About</a><a href="#connect">Connect</a></div>
+        <div className="nav-links"><a href="#expertise">Expertise</a><a href="#writing">Writing</a><a href="#resume">Résumé</a><a href="#speaking">Speaking</a><a href="#about">About</a><a href="#connect">Connect</a></div>
       </nav>
 
       <header className="hero" id="top">
@@ -60,21 +69,54 @@ export default function Home() {
       <section className="section resume" id="resume">
         <div className="section-heading"><div><p className="eyebrow">03 / Résumé</p><h2>A career connecting technology strategy to reliable execution.</h2></div><a className="text-link" href="https://www.linkedin.com/in/stefanamuller/">Full profile <ArrowUpRight aria-hidden="true" /></a></div>
         <div className="career-list">
-          {career.map((item) => <div className="career-row" key={item.company}><span>{item.period}</span><div><h3>{item.company}</h3><p>{item.role}</p></div><p>{item.detail}</p></div>)}
+          {career.map((item) => <div className="career-row" key={item.company}><span>{item.period}</span><div><h3>{item.company}</h3><p>{item.role}</p></div><div className="career-detail"><p>{item.detail}</p>{item.sourceUrl && <a href={item.sourceUrl}>{item.sourceLabel} <ArrowUpRight aria-hidden="true" /></a>}</div></div>)}
+        </div>
+      </section>
+
+      <section className="section speaking" id="speaking">
+        <div className="section-heading"><div><p className="eyebrow">04 / Speaking engagements</p><h2>Real lessons from building and leading at scale.</h2></div><p className="section-intro">I speak candidly about the operating choices, organizational shifts, and human judgment behind resilient technology.</p></div>
+        <div className="speaking-layout">
+          <div className="speaking-invites">
+            <p className="project-number">Open to invitations</p>
+            <h3>Bring the conversation to your audience.</h3>
+            <p>I welcome keynotes, conference talks, panels, podcasts, executive roundtables, and technical leadership events.</p>
+            <div className="topic-list" aria-label="Speaking topics"><span>Agentic development and operations</span><span>SRE and reliability at scale</span><span>Cloud and platform engineering</span><span>Leading through transformation</span></div>
+            <a className="text-link" href="https://www.linkedin.com/in/stefanamuller/">Invite me to speak <ArrowUpRight aria-hidden="true" /></a>
+          </div>
+          <div className="talk-list" aria-label="Selected talks">
+            <p className="project-number">Selected talks</p>
+            {talks.map((talk) => <article className="talk" key={`${talk.event}-${talk.year}`}><div className="talk-meta"><span>{talk.year}</span><span>{talk.format}</span></div><div className="talk-copy"><h3>{talk.title}</h3><p className="talk-event">{talk.event}</p><p className="talk-overview">{talk.overview}</p>{talk.url && <a className="talk-link" href={talk.url}>Watch the recording <ArrowUpRight aria-hidden="true" /></a>}</div></article>)}
+            <p className="speaking-history">Also featured at Women Who Code Summit NYC.</p>
+          </div>
         </div>
       </section>
 
       <section className="section leadership" id="leadership">
-        <div className="section-heading"><div><p className="eyebrow">04 / On the record</p><h2>Speaking, recognition, and community.</h2></div></div>
+        <div className="section-heading"><div><p className="eyebrow">05 / On the record</p><h2>Recognition and community.</h2></div></div>
         <div className="leadership-grid">
-          <article><span className="project-number">Speak</span><h3>Ideas shared in the open</h3><ul><li>KubeCon + CloudNativeCon North America</li><li>AI SRE Summit</li><li>AWS re:Invent</li><li>DevOpsDays NYC</li><li>Kubernetes Community Day New York</li></ul></article>
-          <article><span className="project-number">Lead</span><h3>Communities built to last</h3><ul><li>Founder, Long Island Women in Tech</li><li>Executive Sponsor, Salesforce NYC Women in Tech Hub</li><li>Organizer, DevOpsDays NYC</li><li>Startup advisor and technical mentor</li></ul></article>
-          <article><span className="project-number">Recognize</span><h3>Work acknowledged</h3><ul><li>VentureFizz Lead(H)er</li><li>CRN Women of the Channel</li><li>Long Island&apos;s Top 50 Most Influential Women in Business</li><li>CA Technologies Above and Beyond Award</li></ul></article>
+          <article><span className="project-number">Lead</span><h3>Communities built to last</h3><ul>
+            <li><a className="recognition-link" href="https://liwomenintech.com/"><strong>Founder, Long Island Women in Tech</strong><span>Community website</span><ArrowUpRight aria-hidden="true" /></a></li>
+            <li className="organized-event"><strong>Executive Sponsor, Salesforce NYC Women in Tech Hub</strong><p>Hosted Women Who Claude, teaching more than 50 participants how to use Claude Code.</p><span><a href="https://www.linkedin.com/posts/poojaupadhyay0406_womenintech-womenintechnology-nyctech-ugcPost-7495934814496141312-WKm5">Event recap <ArrowUpRight aria-hidden="true" /></a><a href="https://www.linkedin.com/posts/stefanamuller_womenintech-wit-salesforcewomensnetwork-activity-7467593109577760768-fkYt">Sponsor announcement <ArrowUpRight aria-hidden="true" /></a></span></li>
+            <li className="organized-event"><strong>Conference organizer and emcee, DevOpsDays NYC</strong><p>Led talk programming and speaker management, organized volunteers, supported registration, ran social media advertising and marketing, and handled printed signage and event materials.</p><span><a href="https://www.youtube.com/watch?v=e8vmB2c8xo8">2020 welcome <ArrowUpRight aria-hidden="true" /></a><a href="https://www.youtube.com/@devopsdaysnyc4226/search?query=devopsdaysNYC%202023">2023 recordings <ArrowUpRight aria-hidden="true" /></a></span></li>
+            <li><a className="recognition-link" href="https://sb.co/"><strong>Startup mentor, Springboard Enterprises</strong><span>Mentored women-led companies through its Tech Innovation and Health Innovation hubs for five years.</span><ArrowUpRight aria-hidden="true" /></a></li>
+          </ul></article>
+          <article><span className="project-number">Recognize</span><h3>Work acknowledged</h3><ul>
+            <li><a className="recognition-link" href="https://venturefizz.com/insights/leadher-profile-stefana-muller-svp-cloud-infrastructure-operations-at-own/"><strong>VentureFizz Lead(H)er profile</strong><span>Career pivots, technical leadership, mentoring, and inclusive teams</span><ArrowUpRight aria-hidden="true" /></a></li>
+            <li><a className="recognition-link" href="https://www.crn.com/rankings-and-lists/wotc2016-details"><strong>CRN Women of the Channel 2016</strong><span>Official recognition</span><ArrowUpRight aria-hidden="true" /></a></li>
+            <li><a className="recognition-link" href="https://libn.com/wp-content/blogs.dir/1/files/2013/10/T50W-Honorees-FPFC.pdf"><strong>Long Island&apos;s Top 50 Most Influential Women in Business</strong><span>2015 honoree program</span><ArrowUpRight aria-hidden="true" /></a></li>
+            <li><a className="recognition-link" href="https://www.linkedin.com/in/stefanamuller/"><strong>CA Technologies Above and Beyond Award</strong><span>Award details on LinkedIn</span><ArrowUpRight aria-hidden="true" /></a></li>
+          </ul></article>
+          <article><span className="project-number">Advise</span><h3>Experience shared forward</h3><ul>
+            <li>Advisor to infrastructure and security startups</li>
+            <li><a className="recognition-link" href="https://www.linkedin.com/pulse/level-up-together-invitation-join-inclusive-group-mentoring-muller-knuxe"><strong>Mentor to emerging technical leaders</strong><span>Level Up Together mentoring program</span><ArrowUpRight aria-hidden="true" /></a></li>
+            <li>Partner to founders on product-market fit</li>
+            <li><a className="recognition-link" href="https://liwomenintech.com/about-us/"><strong>Advocate for women in technology</strong><span>Community mission and impact</span><ArrowUpRight aria-hidden="true" /></a></li>
+          </ul></article>
         </div>
       </section>
 
       <section className="section about" id="about">
-        <div><p className="eyebrow">05 / About</p><h2>I&apos;ve always been interested in how things work and how they could work better.</h2></div>
+        <div><p className="eyebrow">06 / About</p><h2>I&apos;ve always been interested in how things work and how they could work better.</h2></div>
         <div className="about-copy"><p>My path into technology started in my family&apos;s New York restaurant, where I built a menu and printing system to make a busy operation run more smoothly. That instinct, to understand the real problem and then build the system people actually need, has stayed with me.</p><p>Today I operate where cloud infrastructure, SRE, platform engineering, security, and business outcomes meet. I&apos;ve built global teams, launched new practices, led through acquisition, and created the operating systems that help hundreds of engineers move together.</p><p>I&apos;m now pioneering agentic development and operations: putting coding, SRE, FinOps, and troubleshooting agents into production while keeping human ownership and accountability at the center.</p><div className="about-facts"><span><MapPin aria-hidden="true" /> New York</span><span>Speaker · Mentor · Builder</span><span>AWS · Azure · Kubernetes</span></div></div>
       </section>
 
