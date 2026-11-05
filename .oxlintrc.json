@@ -32,6 +32,8 @@
     "next-env.d.ts"
   ],
   "rules": {
+    "nextjs/no-html-link-for-pages": "off",
+    "nextjs/no-img-element": "off",
     "no-array-constructor": "error",
     "no-var": "error",
     "prefer-const": "error",
