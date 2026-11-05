@@ -46,7 +46,7 @@ export default function Home() {
 
     <section className="section writing" id="writing">
       <div className="section-heading"><div><p className="eyebrow">04 / Field notes</p><h2>Ideas for people building what&apos;s next.</h2></div><a className="text-link" href={writingUrl}>All writing on LinkedIn <ArrowUpRight aria-hidden="true" /></a></div>
-      <div className="essay-list">{essays.map((essay, index) => <a className="essay" href={writingUrl} key={essay.title}><div className="essay-index">0{index + 1}</div><div><span className="essay-date">{essay.date}</span><h3>{essay.title}</h3><p>{essay.summary}</p></div><ArrowUpRight aria-hidden="true" /></a>)}</div>
+      <div className="essay-list">{essays.map((essay, index) => <a className="essay" href={essay.href ?? writingUrl} key={essay.title}><div className="essay-index">0{index + 1}</div><div><span className="essay-date">{essay.date}</span><h3>{essay.title}</h3><p>{essay.summary}</p></div><ArrowUpRight aria-hidden="true" /></a>)}</div>
     </section>
 
     <section className="section about" id="about">
