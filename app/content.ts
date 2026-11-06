@@ -1,13 +1,20 @@
+// Public site address. Update this if the site moves to a custom domain.
+export const siteUrl = 'https://stefana912.github.io';
+
+// Shown across the site and in page descriptions; update it once here.
+export const yearsInTech = '26+';
+
 export const writingUrl = 'https://www.linkedin.com/in/stefanamuller/recent-activity/articles/';
 
 export const mentorshipFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfUipZ8b-F1XLRjpO5GnYa1iJqOcTz6AHTtrM5qr_Pl-_6YBw/viewform';
 
 export const speakingFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScNBUA-LVriSOplUQu5Chkd5OSJk2BX2WkLR762c9ynN_MIvg/viewform';
 
-export const essays = [
+// Add a `url` to link an essay directly; without one it links to the LinkedIn articles list.
+export const essays: { date: string; title: string; summary: string; url?: string }[] = [
   { date: 'Jul 2026', title: "If You're Waiting for a Project to Start Using AI, You're Doing It Wrong", summary: 'A note to engineering leaders: your everyday work is already the AI use case. Start together, in the room, with the context owners present.' },
   { date: 'Nov 2025', title: 'Déjà Vu in the Digital Age: Why AI Coding Is the New “Rogue IT”', summary: 'What the cloud and DevOps transformations can teach us about guiding the fast, decentralized adoption of AI coding tools.' },
-  { date: 'Apr 2025', title: 'Level Up Together', summary: 'An invitation to inclusive group mentoring and a practical approach to growing technical leaders in community.' },
+  { date: 'Apr 2025', title: 'Level Up Together', summary: 'An invitation to inclusive group mentoring and a practical approach to growing technical leaders in community.', url: 'https://www.linkedin.com/pulse/level-up-together-invitation-join-inclusive-group-mentoring-muller-knuxe' },
 ];
 
 export const talks = [
