@@ -12,6 +12,7 @@ export const speakingFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScNBUA-
 
 // Add a `url` to link an essay directly; without one it links to the LinkedIn articles list.
 export const essays: { date: string; title: string; summary: string; url?: string }[] = [
+  { date: 'Nov 2026', title: 'I Vibe-Coded an App in an Hour. Then I Spent 12 Weeks Finishing It.', summary: 'How a VP of engineering got back to building with AI tools — and what a live order system for a family butcher shop taught about why applications are hard.', url: '/writing/vibe-coded-an-app-in-an-hour' },
   { date: 'Jul 2026', title: "If You're Waiting for a Project to Start Using AI, You're Doing It Wrong", summary: 'A note to engineering leaders: your everyday work is already the AI use case. Start together, in the room, with the context owners present.' },
   { date: 'Nov 2025', title: 'Déjà Vu in the Digital Age: Why AI Coding Is the New “Rogue IT”', summary: 'What the cloud and DevOps transformations can teach us about guiding the fast, decentralized adoption of AI coding tools.' },
   { date: 'Apr 2025', title: 'Level Up Together', summary: 'An invitation to inclusive group mentoring and a practical approach to growing technical leaders in community.', url: 'https://www.linkedin.com/pulse/level-up-together-invitation-join-inclusive-group-mentoring-muller-knuxe' },
