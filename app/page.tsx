@@ -3,7 +3,15 @@ import { SiteFooter, SiteNav } from './components';
 import { essays, expertise, mentorshipFormUrl, talks, writingUrl, yearsInTech } from './content';
 
 export default function Home() {
+  const latest = essays[0];
+  const latestHref = latest.url ?? writingUrl;
+  const latestExternal = latestHref.startsWith('http');
   return <main>
+    <aside className="latest-banner" aria-label="Latest writing">
+      <span className="latest-label">New</span>
+      <a className="latest-link" href={latestHref} target={latestExternal ? '_blank' : undefined} rel={latestExternal ? 'noreferrer' : undefined}><span className="latest-title">{latest.title}</span> <span className="latest-cta">Read the post <ArrowUpRight aria-hidden="true" /></span></a>
+      <a className="latest-more" href="#writing">More writing</a>
+    </aside>
     <SiteNav />
 
     <header className="hero" id="top">
