@@ -1,6 +1,6 @@
 import { ArrowUpRight, Contact, MapPin } from 'lucide-react';
 import { SiteFooter, SiteNav } from './components';
-import { essays, expertise, mentorshipFormUrl, talks, writingUrl } from './content';
+import { essays, expertise, mentorshipFormUrl, talks, writingUrl, yearsInTech } from './content';
 
 export default function Home() {
   return <main>
@@ -10,7 +10,7 @@ export default function Home() {
       <div className="hero-copy">
         <p className="eyebrow">Speaker · Mentor · Technology executive</p>
         <h1>Building systems<br /><em>that scale.</em><br />Sharing what works.</h1>
-        <p className="hero-intro">I&apos;m Stefana Muller. I bring 26+ years of technology leadership into candid conference conversations and practical mentorship for people building their careers.</p>
+        <p className="hero-intro">I&apos;m Stefana Muller. I bring {yearsInTech} years of technology leadership into candid conference conversations and practical mentorship for people building their careers.</p>
         <div className="hero-actions"><a className="button button-primary" href="/speaking">Invite me to speak <ArrowUpRight aria-hidden="true" /></a><a className="button button-secondary" href="/mentorship">Explore mentorship</a><a className="quiet-link" href="/experience">View executive experience</a></div>
       </div>
       <div className="hero-aside">
@@ -19,7 +19,7 @@ export default function Home() {
       </div>
     </header>
 
-    <section className="signal-strip impact-strip" aria-label="Experience and credibility"><span><strong>26+</strong>Years in technology</span><span><strong>Since 2001</strong>Leading and developing people</span><span><strong>Since 2015</strong>Formal technology mentorship</span><span><strong>KubeCon</strong>AWS re:Invent · AI SRE Summit</span></section>
+    <section className="signal-strip impact-strip" aria-label="Experience and credibility"><span><strong>{yearsInTech}</strong>Years in technology</span><span><strong>Since 2001</strong>Leading and developing people</span><span><strong>Since 2015</strong>Formal technology mentorship</span><span><strong>KubeCon</strong>AWS re:Invent · AI SRE Summit</span></section>
 
     <section className="section home-speaking" id="speaking">
       <div className="section-heading"><div><p className="eyebrow">01 / Speaking</p><h2>Real lessons from building and leading at scale.</h2></div><p className="section-intro">Grounded conversations about the choices, tradeoffs, and human judgment behind resilient technology.</p></div>
@@ -46,7 +46,7 @@ export default function Home() {
 
     <section className="section writing" id="writing">
       <div className="section-heading"><div><p className="eyebrow">04 / Field notes</p><h2>Ideas for people building what&apos;s next.</h2></div><a className="text-link" href={writingUrl}>All writing on LinkedIn <ArrowUpRight aria-hidden="true" /></a></div>
-      <div className="essay-list">{essays.map((essay, index) => <a className="essay" href={essay.href ?? writingUrl} key={essay.title}><div className="essay-index">0{index + 1}</div><div><span className="essay-date">{essay.date}</span><h3>{essay.title}</h3><p>{essay.summary}</p></div><ArrowUpRight aria-hidden="true" /></a>)}</div>
+      <div className="essay-list">{essays.map((essay, index) => <a className="essay" href={essay.url ?? writingUrl} key={essay.title}><div className="essay-index">0{index + 1}</div><div><span className="essay-date">{essay.date}</span><h3>{essay.title}</h3><p>{essay.summary}</p></div><ArrowUpRight aria-hidden="true" /></a>)}</div>
     </section>
 
     <section className="section about" id="about">
